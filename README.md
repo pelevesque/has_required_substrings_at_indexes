@@ -79,3 +79,17 @@ const allowSubstringBleeding = true
 const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, allowSubstringBleeding)
 // result === true
 ```
+
+You can also set `allowSubstringBleeding` using an options style.
+This is for style compatibility with the related `has_required_substrings_at_sums`
+and `has_prohibited_substring_at_sums` packages.
+
+```js
+const str = 'a man a plan a c'
+const requiredSubstrings = { 2: 'man', 8: 'plan', 15: 'canal' }
+const allowSubstringBleeding = true
+const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
+  allowSubstringBleeding: allowSubstringBleeding
+})
+// result === true
+```
