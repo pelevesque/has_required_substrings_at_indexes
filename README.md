@@ -68,7 +68,7 @@ const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
 
 The `allowSubstringBleeding` flag is `false` by default. It it used when you want
 to allow the last substring to be incomplete if the string is too short.
-In the following example, the last substring `canal` starts at the right index,
+In the following example, the last substring `canal` starts at the correct index,
 but remains incomplete since the string ends. Normally this would return `false`.
 With `allowSubstringBleeding` set to `true`, it returns `true`.
 
@@ -79,6 +79,7 @@ const allowSubstringBleeding = true
 const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, allowSubstringBleeding)
 // result === true
 ```
+#### Options Style
 
 You can also set `allowSubstringBleeding` using an options style.
 This is for style compatibility with the related `has_required_substrings_at_sums`
