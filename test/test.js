@@ -24,7 +24,7 @@ describe('#hasRequiredSubstringsAtIndexes()', () => {
   })
 
   describe('single character substrings', () => {
-    it('should return false when one of one required substring is not found', () => {
+    it('should return false when one of one substring is not found', () => {
       const str = 'abcde'
       const requiredSubstrings = { 2: 'a' }
       const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
@@ -32,7 +32,7 @@ describe('#hasRequiredSubstringsAtIndexes()', () => {
       expect(result).to.equal(expected)
     })
 
-    it('should return true when one of one required substring is found', () => {
+    it('should return true when one of one substring is found', () => {
       const str = 'abcde'
       const requiredSubstrings = { 2: 'c' }
       const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
@@ -58,7 +58,7 @@ describe('#hasRequiredSubstringsAtIndexes()', () => {
   })
 
   describe('multi character substrings', () => {
-    it('should return false when one of one required substring is not found', () => {
+    it('should return false when one of one substring is not found', () => {
       const str = 'abcde'
       const requiredSubstrings = { 2: 'abc' }
       const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
@@ -66,7 +66,7 @@ describe('#hasRequiredSubstringsAtIndexes()', () => {
       expect(result).to.equal(expected)
     })
 
-    it('should return true when one of one required substring is found', () => {
+    it('should return true when one of one substring is found', () => {
       const str = 'abcde'
       const requiredSubstrings = { 2: 'cde' }
       const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
@@ -92,7 +92,7 @@ describe('#hasRequiredSubstringsAtIndexes()', () => {
   })
 
   describe('allowSubstringBleeding flag', () => {
-    describe('normal argument style', () => {
+    describe('classic argument style', () => {
       it('should not allow bleeding when set to false', () => {
         const str = 'abcde'
         const requiredSubstrings = { 0: 'abc', 2: 'cde', 4: 'efg' }
