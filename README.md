@@ -79,6 +79,7 @@ const allowSubstringBleeding = true
 const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, allowSubstringBleeding)
 // result === true
 ```
+
 #### Options Style
 
 You can also set `allowSubstringBleeding` using an options style.
