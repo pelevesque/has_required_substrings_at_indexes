@@ -1,6 +1,6 @@
 {
   "name": "@pelevesque/has_required_substrings_at_indexes",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Checks if a string has required substrings at given indexes.",
   "main": "index.js",
   "engines": {
