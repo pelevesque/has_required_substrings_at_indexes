@@ -32,6 +32,14 @@ https://www.npmjs.com/package/@pelevesque/has_required_substrings_at_indexes
 
 ## Usage
 
+### Parameters
+
+```js
+str                    (required)
+requiredSubstrings     (required)
+allowSubstringBleeding (optional) default = false
+```
+
 ### Requiring
 
 ```js
