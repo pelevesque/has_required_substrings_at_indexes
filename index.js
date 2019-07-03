@@ -1,7 +1,5 @@
 'use strict'
 
-const isObject = require('isobject')
-
 module.exports = (str, requiredSubstrings, {
   ignoreSubstringsOutsideString = false,
   allowLastSubstringToBleed = false
