@@ -99,7 +99,7 @@ describe('#hasRequiredSubstringsAtIndexes()', () => {
     })
   })
 
-  describe('ignoreSubstringsOutsideString flag', () => {
+  describe('ignoreSubstringsOutsideString option', () => {
     it('should default to false', () => {
       const str = 'abcde'
       const requiredSubstrings = { 5: 'fig' }
@@ -131,7 +131,7 @@ describe('#hasRequiredSubstringsAtIndexes()', () => {
     })
   })
 
-  describe('allowLastSubstringToBleed flag', () => {
+  describe('allowLastSubstringToBleed option', () => {
     it('should default to false', () => {
       const str = 'a big ma'
       const requiredSubstrings = { 6: 'machine' }

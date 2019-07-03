@@ -8,9 +8,9 @@ Checks if a string has required substrings at given indexes.
 
 ## Related Packages
 
-https://github.com/pelevesque/has_required_substrings_at_sums  
+https://github.com/pelevesque/has_required_substrings_after_sums  
 https://github.com/pelevesque/has_prohibited_substring_at_indexes  
-https://github.com/pelevesque/has_prohibited_substring_at_sums  
+https://github.com/pelevesque/has_prohibited_substring_after_sums  
 
 ## Node Repository
 
@@ -35,9 +35,9 @@ https://www.npmjs.com/package/@pelevesque/has_required_substrings_at_indexes
 ### Parameters
 
 ```js
-str                    (required)
-requiredSubstrings     (required)
-allowSubstringBleeding (optional) default = false
+str                (required)
+requiredSubstrings (required)
+options            (optional) default = { ignoreSubstringsOutsideString = false, allowLastSubstringToBleed = false }
 ```
 
 ### Requiring
@@ -53,7 +53,21 @@ if all substrings are found at the correct indexes.
 
 ```js
 const str = 'abcde'
-const requiredSubstrings = { 0: 'e', 2: 'c', 4: 'a' }
+const requiredSubstrings = { 0: 'f' }
+const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
+// result === false
+```
+
+```js
+const str = 'abcde'
+const requiredSubstrings = { 5: 'f' }
+const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
+// result === false
+```
+
+```js
+const str = 'abcde'
+const requiredSubstrings = { 0: 'a', 2: 'c', 4: 'a' }
 const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
 // result === false
 ```
@@ -72,34 +86,35 @@ const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
 // result === true
 ```
 
-### AllowSubstringBleeding Flag
+### ignoreSubstringsOutsideString Option
 
-The `allowSubstringBleeding` flag is `false` by default. It it used when you want
-to allow the last substring to be incomplete if the string is too short.
-In the following example, the last substring `canal` starts at the correct index,
-but remains incomplete since the string ends. Normally this would return `false`.
-With `allowSubstringBleeding` set to `true`, it returns `true`.
+The `ignoreSubstringsOutsideString` option is `false` by default. When set to
+`true`, required substrings that fall outside the string length will be ignored.
 
 ```js
-const str = 'a man a plan a c'
-const requiredSubstrings = { 2: 'man', 8: 'plan', 15: 'canal' }
-const allowSubstringBleeding = true
-const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, allowSubstringBleeding)
+const str = 'abcde'
+const requiredSubstrings = { 5: 'f' }
+const ignoreSubstringsOutsideString = true
+const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
+  ignoreSubstringsOutsideString: ignoreSubstringsOutsideString
+})
 // result === true
 ```
 
-#### Options Style
+### allowLastSubstringToBleed Option
 
-You can also set `allowSubstringBleeding` using an options style.
-This is for style compatibility with the related `has_required_substrings_at_sums`
-and `has_prohibited_substring_at_sums` packages.
+The `allowLastSubstringToBleed` option is `false` by default. It it used when you want
+to allow the last substring to be incomplete if the string is too short.
+In the following example, the last substring `canal` starts at the correct index,
+but remains incomplete since the string ends. Normally this would return `false`.
+With `allowLastSubstringToBleed` set to `true`, it returns `true`.
 
 ```js
 const str = 'a man a plan a c'
 const requiredSubstrings = { 2: 'man', 8: 'plan', 15: 'canal' }
-const allowSubstringBleeding = true
+const allowLastSubstringToBleed = false
 const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
-  allowSubstringBleeding: allowSubstringBleeding
+  allowLastSubstringToBleed: allowLastSubstringToBleed
 })
 // result === true
 ```
