@@ -88,7 +88,9 @@ const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
 // result === true
 ```
 
-### allowLastSubstringToBleed Option
+### Options
+
+#### allowLastSubstringToBleed
 
 The `allowLastSubstringToBleed` option is `false` by default. It it used when you want
 to allow the last substring to be incomplete if the string is too short.
@@ -106,7 +108,7 @@ const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
 // result === true
 ```
 
-### ignoreSubstringsOutsideString Option
+#### ignoreSubstringsOutsideString
 
 The `ignoreSubstringsOutsideString` option is `false` by default. When set to
 `true`, required substrings that fall outside the string length will be ignored.
