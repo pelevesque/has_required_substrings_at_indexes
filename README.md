@@ -39,7 +39,7 @@ https://www.npmjs.com/package/@pelevesque/has_required_substrings_at_indexes
 ```js
 str                (required)
 requiredSubstrings (required)
-options            (optional) default = { ignoreSubstringsOutsideString = false, allowLastSubstringToBleed = false }
+options            (optional) default = { allowLastSubstringToBleed = false, ignoreSubstringsOutsideString = false }
 ```
 
 ### Requiring
