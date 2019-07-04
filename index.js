@@ -1,8 +1,8 @@
 'use strict'
 
 module.exports = (str, requiredSubstrings, {
-  ignoreSubstringsOutsideString = false,
-  allowLastSubstringToBleed = false
+  allowLastSubstringToBleed = false,
+  ignoreSubstringsOutsideString = false
 } = {}) => {
   requiredSubstrings = Object.entries(requiredSubstrings)
   if (requiredSubstrings.length === 0) return true

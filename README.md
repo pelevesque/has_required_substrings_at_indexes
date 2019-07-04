@@ -8,8 +8,10 @@ Checks if a string has required substrings at given indexes.
 
 ## Related Packages
 
-https://github.com/pelevesque/has_required_substrings_after_sums  
 https://github.com/pelevesque/has_prohibited_substring_at_indexes  
+https://github.com/pelevesque/has_required_substrings  
+https://github.com/pelevesque/has_prohibited_substring  
+https://github.com/pelevesque/has_required_substrings_after_sums  
 https://github.com/pelevesque/has_prohibited_substring_after_sums  
 
 ## Node Repository
@@ -86,21 +88,6 @@ const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
 // result === true
 ```
 
-### ignoreSubstringsOutsideString Option
-
-The `ignoreSubstringsOutsideString` option is `false` by default. When set to
-`true`, required substrings that fall outside the string length will be ignored.
-
-```js
-const str = 'abcde'
-const requiredSubstrings = { 5: 'f' }
-const ignoreSubstringsOutsideString = true
-const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
-  ignoreSubstringsOutsideString: ignoreSubstringsOutsideString
-})
-// result === true
-```
-
 ### allowLastSubstringToBleed Option
 
 The `allowLastSubstringToBleed` option is `false` by default. It it used when you want
@@ -115,6 +102,21 @@ const requiredSubstrings = { 2: 'man', 8: 'plan', 15: 'canal' }
 const allowLastSubstringToBleed = false
 const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
   allowLastSubstringToBleed: allowLastSubstringToBleed
+})
+// result === true
+```
+
+### ignoreSubstringsOutsideString Option
+
+The `ignoreSubstringsOutsideString` option is `false` by default. When set to
+`true`, required substrings that fall outside the string length will be ignored.
+
+```js
+const str = 'abcde'
+const requiredSubstrings = { 5: 'f' }
+const ignoreSubstringsOutsideString = true
+const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
+  ignoreSubstringsOutsideString: ignoreSubstringsOutsideString
 })
 // result === true
 ```

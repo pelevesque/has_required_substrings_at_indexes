@@ -99,38 +99,6 @@ describe('#hasRequiredSubstringsAtIndexes()', () => {
     })
   })
 
-  describe('ignoreSubstringsOutsideString option', () => {
-    it('should default to false', () => {
-      const str = 'abcde'
-      const requiredSubstrings = { 5: 'fig' }
-      const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
-      const expected = false
-      expect(result).to.equal(expected)
-    })
-
-    it('should not ignore substrings outside string when set to false', () => {
-      const str = 'abcde'
-      const requiredSubstrings = { 5: 'fig' }
-      const ignoreSubstringsOutsideString = false
-      const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
-        ignoreSubstringsOutsideString: ignoreSubstringsOutsideString
-      })
-      const expected = false
-      expect(result).to.equal(expected)
-    })
-
-    it('should ignore substrings outside string when set to true', () => {
-      const str = 'abcde'
-      const requiredSubstrings = { 5: 'fig' }
-      const ignoreSubstringsOutsideString = true
-      const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
-        ignoreSubstringsOutsideString: ignoreSubstringsOutsideString
-      })
-      const expected = true
-      expect(result).to.equal(expected)
-    })
-  })
-
   describe('allowLastSubstringToBleed option', () => {
     it('should default to false', () => {
       const str = 'a big ma'
@@ -157,6 +125,38 @@ describe('#hasRequiredSubstringsAtIndexes()', () => {
       const allowLastSubstringToBleed = true
       const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
         allowLastSubstringToBleed: allowLastSubstringToBleed
+      })
+      const expected = true
+      expect(result).to.equal(expected)
+    })
+  })
+
+  describe('ignoreSubstringsOutsideString option', () => {
+    it('should default to false', () => {
+      const str = 'abcde'
+      const requiredSubstrings = { 5: 'fig' }
+      const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings)
+      const expected = false
+      expect(result).to.equal(expected)
+    })
+
+    it('should not ignore substrings outside string when set to false', () => {
+      const str = 'abcde'
+      const requiredSubstrings = { 5: 'fig' }
+      const ignoreSubstringsOutsideString = false
+      const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
+        ignoreSubstringsOutsideString: ignoreSubstringsOutsideString
+      })
+      const expected = false
+      expect(result).to.equal(expected)
+    })
+
+    it('should ignore substrings outside string when set to true', () => {
+      const str = 'abcde'
+      const requiredSubstrings = { 5: 'fig' }
+      const ignoreSubstringsOutsideString = true
+      const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
+        ignoreSubstringsOutsideString: ignoreSubstringsOutsideString
       })
       const expected = true
       expect(result).to.equal(expected)
