@@ -101,24 +101,24 @@ With `allowLastSubstringToBleed` set to `true`, it returns `true`.
 ```js
 const str = 'a man a plan a c'
 const requiredSubstrings = { 2: 'man', 8: 'plan', 15: 'canal' }
-const allowLastSubstringToBleed = false
+const allowLastSubstringToBleed = true
 const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
   allowLastSubstringToBleed: allowLastSubstringToBleed
 })
 // result === true
 ```
 
-#### ignoreSubstringsOutsideString
+#### ignoreIndexesOutsideString
 
-The `ignoreSubstringsOutsideString` option is `false` by default. When set to
-`true`, required substrings that fall outside the string length will be ignored.
+The `ignoreIndexesOutsideString` option is `false` by default. When set to `true`,
+required substring indexes that fall outside the string length will be ignored.
 
 ```js
 const str = 'abcde'
 const requiredSubstrings = { 5: 'f' }
-const ignoreSubstringsOutsideString = true
+const ignoreIndexesOutsideString = true
 const result = hasRequiredSubstringsAtIndexes(str, requiredSubstrings, {
-  ignoreSubstringsOutsideString: ignoreSubstringsOutsideString
+  ignoreIndexesOutsideString: ignoreIndexesOutsideString
 })
 // result === true
 ```
